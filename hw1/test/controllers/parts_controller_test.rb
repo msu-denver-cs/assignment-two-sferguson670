@@ -5,6 +5,19 @@ class PartsControllerTest < ActionDispatch::IntegrationTest
     @part = parts(:one)
   end
 
+  test "shouldn't find a missing part" do
+      assert Part.where("name like ?", "Example").length == 0
+  end
+
+  test "should find a part from the fixture" do
+      assert Part.where("name like ?", "MyString").length == 2
+  end
+
+  test "searches always return 200" do
+      get search_parts_url, params: { search: "example" }
+      assert_equal 200, status
+  end 
+
   test "should get index" do
     get parts_url
     assert_response :success

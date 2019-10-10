@@ -5,4 +5,7 @@ end
 class Car < ActiveRecord::Base
     has_many:factors
     has_many:parts, through: :factors
-end 
+    
+    validates_associated :parts
+end
+
