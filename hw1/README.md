@@ -1,30 +1,39 @@
 # README
-*Assignment 1:
-    -Create scaffolds for makes, cars, parts
-    -One to many relationship for make to cars
-    -Many to many relationshiop for cars to parts
-    -Create model Factory for many to many relationship 
-    
-*Structure:
+*Assignment 2*:
+    -Add validations to all your models
+    -Add a search in each index function
+    -Write unit tests for all code you create
+    -EC: make searches dynamic using Ajax
+
+*Structure*:
 Make -> Cars -> Factory -> Parts
 (one)     (many)    (model)     (many)
-    
-    
-    Commands Used For Structure:
-    $rails new hw1
-    $rails generate scaffold Part name:string
-    $rails generate scaffold Make name:string country:string
-    $rails generate scaffold Car name:string model:string vin:integer make:references
-    $rails generate model Factory car:references part:references
-    
+
+
+    Validations:
+    -/app/models/car.rb
+    -/app/models/make.rb
+    -/app/models/part.rb
+
+    Added Search:
+    -/config/routes.rb
+    -/app/view/parts/index.html.erb
+    -...
+
+    Wrote Unit Tests:
+    -/test/controllers/parts_controller_test.rb
+    -/test/controllers/makes_controller_test.rb
+    -/test/controllers/cars_controller_test.rb
+    -...
+
     Commands Used Throughout:
     $bin/rails db:seed
     $rails db:migrate
     $rails test
     $rails server
     $rails destroy scaffold __name__
-    
-* ROR Info
+
+*ROR Info*
 Rails version: 5.2.3
 Ruby version: 2.3.7-p456 (universal.x86_64-darwin18)
 RubyGems version: 2.5.2.3
